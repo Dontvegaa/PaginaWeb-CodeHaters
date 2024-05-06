@@ -192,6 +192,65 @@
       position: relative;
     }
   }
+
+  /* Estilos para Contacto */
+
+.contact-content table{
+  padding: 2%;
+  width: 94%;
+
+}
+
+.contact-content table a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 180%;
+  background-color: #96d37d;
+  padding: 12px;
+  border-radius: 5%;
+}
+
+.contact-content table a.a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 180%;
+  background-color: #96d37d;
+  padding: 12px;
+  border-radius: 5%;
+}
+
+.contact-content .cont p{
+  font-size: 22px;
+  text-align: justify;
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 3%;
+}
+
+.contact-content table {
+  width: 90%;
+}
+
+.contact-content .bottom-form{
+  border-radius: 2%;
+  background-color: #293a68; 
+  color: white;
+  font-weight: 300;
+  border: 0;
+  height: 70px; 
+  width: 98%;
+  margin-left: 2%;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.contact-content{
+  padding: 2%;
+}
+
+::placeholder{
+  color: rgb(255, 255, 255);
+}
   
   @media only screen and (max-width: 510px) {
     .search__icon img {
