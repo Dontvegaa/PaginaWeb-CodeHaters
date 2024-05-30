@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/icons/fit.png" type="image/x-icon">
+    <title>Gestión de miembros</title>
+    <link rel= "stylesheet" href="css/fitstyle.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			font-family: Arial, sans-serif;
+		}
+
+		th, td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #645468;
+		}
+
+		tr:hover {
+			background-color: #f5f5f5;
+            color: black;
+		}
+	</style>
+</head>
+
+<body>
+    <div class="header">
+        <a class="bottonmain" href="./FitSubs.html"><img class="logofit" src="img/icons/fit.png" alt="logofit"></a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#" class="nav-link">Configuración</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Ayuda</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+            <li class="nav-item"><a href="../login.html" class="nav-link">Cerrar sesión</a></li>
+        </ul>
+        <img class="logouser" src="img/icons/user.png" alt="logo"> 
+        <h1>Registro de membresias</h1>
+    </div>
+
+    <table id="tabla"  class="table table-primary">
+		<thead>
+		<tr>
+			<th scope="col">ID Miembro</th>
+			<th scope="col">Nombre Cliente</th>
+			<th scope="col">Tipo Membresía</th>
+			<th scope="col">Fecha Pago</th>
+			<th scope="col">Fecha Vencimiento</th>
+			<th scope="col">Días Retraso</th>
+			<th scope="col">Recargo</th>
+		</tr>
+		
+		<tr>
+			<th scope="col"> <input type="number" class="form-control" name="Idmember" id="Idmember"> </th>
+			<th scope="col"> <input type="text" class="form-control" name="member" id="member"> </th> 
+			<th scope="col"> <input type="text" class="form-control" name="tipomembresia" id="tipomembresia"> </th>
+			<th scope="col"> <input type="date" class="form-control" name="fechapago" id="fechapago"> </th>
+			<th scope="col"> <input type="date" class="form-control" name="fechavence" id="fechavence"> </th> 
+			<th scope="col"> <input type="number" class="form-control" name="diasretraso" id="diasretraso"> </th>
+			<th scope="col"> <input type="number" class="form-control" name="recargo" id="recargo"> </th>
+			<th></th>
+		</tr>
+
+	</thead>
+
+	<tbody>
+		
+	</tbody>
+
+	</table>
+
+		<!-- Botón para agregar filas -->
+	<button id="agregarFila" class="btn btn-primary">Agregar Fila</button>
+	<!-- Botón para guardar la información en un archivo txt -->
+	<button id="guardarTabla" class="btn btn-secondary">Guardar
+	Tabla</button>
+	<!-- Botón para cargar la información desde un archivo txt -->
+	<input type="file" id="cargarTabla" class="btn btn-secondary"
+	accept=".txt">
+	</div>
+
+	<script>
+	$(document).ready(function() {
+	
+	// Agregar una nueva fila
+	$('#agregarFila').click(function() {
+	var Idmember=$("#Idmember").val();
+	var member=$("#member").val();
+	var tipomembresia=$("#tipomembresia").val();
+	var fechapago=$("#fechapago").val();
+	var fechavence=$("#fechavence").val();
+	var diasretraso=$("#diasretraso").val();
+	var recargo=$("#recargo").val();
+
+	// Define la nueva fila
+	var newRow = `
+	<tr>
+	<th scope="row">`+Idmember+`</td>
+	<td>`+member+`</td>
+	<td>`+tipomembresia+`</td>
+	<td>`+fechapago+`</td>
+	<td>`+fechavence+`</td>
+	<td>`+diasretraso+`</td>
+	<td>`+recargo+`</td>
+	</tr>
+	`;
+
+	// Agrega la nueva fila al final del tbody
+	$('#tabla tbody').append(newRow);
+	});
+
+	// Guardar la tabla en un archivo txt
+	$('#guardarTabla').click(function() {
+
+	// Inicializa una variable para almacenar los datos de la tabla
+	var tableData = '';
+
+	// Itera sobre cada fila de la tabla
+	$('#tabla tbody tr').each(function(rowIndex, row) {
+
+	// Itera sobre cada celda de la fila
+	$(row).find('td').each(function(cellIndex, cell) {
+
+	tableData += $(cell).text() + '\t'; // Separa cada celda con una tabulación
+	});
+
+	tableData += '\n'; // Salto de línea al final de cada fila
+	});
+
+	// Crear un Blob con los datos de la tabla
+	var blob = new Blob([tableData], { type: 'text/plain' });
+	var url = URL.createObjectURL(blob);
+
+	// Crear un enlace para descargar el archivo
+	var a = document.createElement('a');
+	a.href = url;
+	a.download = 'tabla.txt';
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
+	});
+
+	// Cargar la tabla desde un archivo txt
+	$('#cargarTabla').change(function(e) {
+	var file = e.target.files[0];
+	var reader = new FileReader();
+	reader.onload = function(e) {
+	var tableData = e.target.result;
+	var rows = tableData.split('\n');
+
+	$('#tabla tbody').empty(); // Limpiar la tabla antes decargar nuevos datos
+	rows.forEach(function(row) {
+	var cells = row.split('\t');
+	var newRow = '<tr>';
+	cells.forEach(function(cell) {
+	newRow += '<td>' + cell + '</td>';
+	});
+	newRow += '</tr>';
+	$('#tabla tbody').append(newRow);
+	});
+	};
+	reader.readAsText(file);
+	});
+	});
+
+	</script>
+
+	<script src="js/fitscript.js"></script>
+</body>
+</html>

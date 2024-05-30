@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/icons/fit.png" type="image/x-icon">
+    <title>Suscripciones</title>
+    <link rel= "stylesheet" href="css/fitstyle.css">
+    <style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			font-family: Arial, sans-serif;
+		}
+
+		th, td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #645468;
+		}
+
+		tr:hover {
+			background-color: #f5f5f5;
+            color: black;
+		}
+	</style>
+</head>
+
+<body>
+
+    <div class="header">
+        <a class="bottonmain" href="./FitSubs.html"><img class="logofit" src="img/icons/fit.png" alt="logofit"></a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#" class="nav-link">Configuración</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Ayuda</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+            <li class="nav-item"><a href="../login.html" class="nav-link">Cerrar sesión</a></li>
+        </ul>
+        <img class="logouser" src="img/icons/user.png" alt="logo"> 
+        <h1>Gestión de Suscripciones</h1>
+    </div>
+
+        <table>
+            <tr>
+                <th>ID Miembro</th>
+                <th>Nombre</th>
+                <th>Plan</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Vencimiento</th>
+                <th>Pago Pendiente</th>
+                <th>Acción</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Juan Pérez</td>
+                <td>Anual</td>
+                <td>01/05/2023</td>
+                <td>30/04/2024</td>
+                <td>$0</td>
+                <td>
+                    <button onclick="renovarSuscripcion(1)">Renovar</button>
+                    <button onclick="actualizarPlan(1)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>María García</td>
+                <td>Mensual</td>
+                <td>01/05/2023</td>
+                <td>31/05/2023</td>
+                <td>$20</td>
+                <td>
+                    <button onclick="pagarSuscripcion(2)">Pagar</button>
+                    <button onclick="actualizarPlan(2)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Carlos Rodríguez</td>
+                <td>Nuevo</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <button onclick="crearSuscripcion(3)">Crear Suscripción</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Laura Sánchez</td>
+                <td>Mensual</td>
+                <td>15/04/2023</td>
+                <td>14/05/2023</td>
+                <td>$15</td>
+                <td>
+                    <button onclick="pagarSuscripcion(4)">Pagar</button>
+                    <button onclick="actualizarPlan(4)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Pedro Ramírez</td>
+                <td>Anual</td>
+                <td>10/01/2023</td>
+                <td>09/01/2024</td>
+                <td>$180</td>
+                <td>
+                    <button onclick="renovarSuscripcion(5)">Renovar</button>
+                    <button onclick="actualizarPlan(5)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Ana Martínez</td>
+                <td>Semestral</td>
+                <td>01/02/2023</td>
+                <td>31/07/2023</td>
+                <td>$90</td>
+                <td>
+                    <button onclick="renovarSuscripcion(6)">Renovar</button>
+                    <button onclick="actualizarPlan(6)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>David Fernández</td>
+                <td>Mensual</td>
+                <td>20/03/2023</td>
+                <td>19/04/2023</td>
+                <td>$20</td>
+                <td>
+                    <button onclick="pagarSuscripcion(7)">Pagar</button>
+                    <button onclick="actualizarPlan(7)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Jorge López</td>
+                <td>Anual</td>
+                <td>05/05/2023</td>
+                <td>04/05/2024</td>
+                <td>$0</td>
+                <td>
+                    <button onclick="renovarSuscripcion(8)">Renovar</button>
+                    <button onclick="actualizarPlan(8)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Lucía Díaz</td>
+                <td>Mensual</td>
+                <td>12/06/2023</td>
+                <td>11/07/2023</td>
+                <td>$25</td>
+                <td>
+                    <button onclick="pagarSuscripcion(9)">Pagar</button>
+                    <button onclick="actualizarPlan(9)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Roberto Gómez</td>
+                <td>Semestral</td>
+                <td>01/03/2023</td>
+                <td>31/08/2023</td>
+                <td>$100</td>
+                <td>
+                    <button onclick="renovarSuscripcion(10)">Renovar</button>
+                    <button onclick="actualizarPlan(10)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Carla Torres</td>
+                <td>Nuevo</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <button onclick="crearSuscripcion(11)">Crear Suscripción</button>
+                </td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Andrés Jiménez</td>
+                <td>Mensual</td>
+                <td>07/04/2023</td>
+                <td>06/05/2023</td>
+                <td>$18</td>
+                <td>
+                    <button onclick="pagarSuscripcion(12)">Pagar</button>
+                    <button onclick="actualizarPlan(12)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Elena Moreno</td>
+                <td>Anual</td>
+                <td>25/12/2022</td>
+                <td>24/12/2023</td>
+                <td>$200</td>
+                <td>
+                    <button onclick="renovarSuscripcion(13)">Renovar</button>
+                    <button onclick="actualizarPlan(13)">Actualizar Plan</button>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>14</td>
+                <td>Isabel Rivas</td>
+                <td>Semestral</td>
+                <td>15/07/2023</td>
+                <td>14/01/2024</td>
+                <td>$80</td>
+                <td>
+                    <button onclick="renovarSuscripcion(14)">Renovar</button>
+                    <button onclick="actualizarPlan(14)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Fernando Castillo</td>
+                <td>Mensual</td>
+                <td>10/05/2023</td>
+                <td>09/06/2023</td>
+                <td>$22</td>
+                <td>
+                    <button onclick="pagarSuscripcion(15)">Pagar</button>
+                    <button onclick="actualizarPlan(15)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Patricia Reyes</td>
+                <td>Nuevo</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <button onclick="crearSuscripcion(16)">Crear Suscripción</button>
+                </td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>José Herrera</td>
+                <td>Anual</td>
+                <td>01/08/2023</td>
+                <td>31/07/2024</td>
+                <td>$0</td>
+                <td>
+                    <button onclick="renovarSuscripcion(17)">Renovar</button>
+                    <button onclick="actualizarPlan(17)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Daniela Mendoza</td>
+                <td>Mensual</td>
+                <td>05/06/2023</td>
+                <td>04/07/2023</td>
+                <td>$25</td>
+                <td>
+                    <button onclick="pagarSuscripcion(18)">Pagar</button>
+                    <button onclick="actualizarPlan(18)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Ricardo Vargas</td>
+                <td>Semestral</td>
+                <td>12/09/2023</td>
+                <td>11/03/2024</td>
+                <td>$95</td>
+                <td>
+                    <button onclick="renovarSuscripcion(19)">Renovar</button>
+                    <button onclick="actualizarPlan(19)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Gabriela Flores</td>
+                <td>Mensual</td>
+                <td>20/04/2023</td>
+                <td>19/05/2023</td>
+                <td>$18</td>
+                <td>
+                    <button onclick="pagarSuscripcion(20)">Pagar</button>
+                    <button onclick="actualizarPlan(20)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Sergio Silva</td>
+                <td>Anual</td>
+                <td>01/11/2023</td>
+                <td>31/10/2024</td>
+                <td>$210</td>
+                <td>
+                    <button onclick="renovarSuscripcion(21)">Renovar</button>
+                    <button onclick="actualizarPlan(21)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Manuela Blanco</td>
+                <td>Semestral</td>
+                <td>01/10/2023</td>
+                <td>31/03/2024</td>
+                <td>$85</td>
+                <td>
+                    <button onclick="renovarSuscripcion(22)">Renovar</button>
+                    <button onclick="actualizarPlan(22)">Actualizar Plan</button>
+                </td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Hugo Navarro</td>
+                <td>Mensual</td>
+                <td>15/03/2023</td>
+                <td>14/04/2023</td>
+                <td>$20</td>
+                <td>
+                    <button onclick="pagarSuscripcion(23)">Pagar</button>
+                    <button onclick="actualizarPlan(23)">Actualizar Plan</button>
+                </td>
+            </tr>
+            
+            
+
+        </table>
+    
+        <script>
+            function renovarSuscripcion(idMiembro) {
+                // Lógica para renovar la suscripción del miembro
+                alert("Renovando suscripción del miembro " + idMiembro);
+            }
+    
+            function actualizarPlan(idMiembro) {
+                // Lógica para actualizar el plan de suscripción del miembro
+                alert("Actualizando plan de suscripción del miembro " + idMiembro);
+            }
+    
+            function pagarSuscripcion(idMiembro) {
+                // Lógica para pagar la suscripción pendiente del miembro
+                alert("Pagando suscripción pendiente del miembro " + idMiembro);
+            }
+    
+            function crearSuscripcion(idMiembro) {
+                // Lógica para crear una nueva suscripción para el miembro
+                alert("Creando nueva suscripción para el miembro " + idMiembro);
+            }
+        </script>
+        <script src="js/fitscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./html/img/icons/fit.png" type="image/x-icon">
+    <title>¡Inicia Sesión FitSubs!</title>
+    <link rel= "stylesheet" href="./html/css/fitstyle.css">
+    <style>
+
+
+		.login-container {
+			background-color: #fff;
+			padding: 20px;
+            margin-inline: 32%;
+            margin-top: 8%;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			text-align: center;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			padding: 10px;
+			margin: 10px 0;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			width: 75%;
+		}
+
+        .login-container h2{
+            color: black;
+        }
+
+        .login-container p{
+            color: black;
+            text-align: left;
+            margin-left: 10%;
+            margin-bottom: 1%;
+        }
+
+        .login-container .noaccount{
+            color: black;
+            margin-top: 20%;
+            text-align: center;
+            margin-left: 0px;
+        }
+
+        .login-container .forgotpass{
+            text-decoration: none;
+            color: black;
+            text-align: right;
+            margin-left: 40%;
+            margin-top: 2px;
+        }
+
+        .login-container a{
+            text-decoration: none;
+            color: #e00cd6;
+        }
+
+		button {
+			padding: 10px 20px;
+			background-color: #52164f;
+			color: #fff;
+			border: none;
+			border-radius: 10px;
+			cursor: pointer;
+            width: 60%;
+            margin-top: 5%;
+		}
+	</style>
+</head>
+
+<body>
+
+    <div class="login-container">
+		<h2>Inicio de Sesión</h2>
+        <p>Usuario</p>
+		<input type="text" id="username" placeholder="Introduzca su Usuario" />
+        <p>Contraseña</p>
+		<input type="password" id="password" placeholder="Introduzca su Contraseña" />
+        <br>
+        <a class="forgotpass" href="#" onclick="passforgot()">¿Olvidaste tu contraseña?</a>
+        <br>
+		<button onclick="login()">Iniciar Sesión</button>
+        <p class="noaccount">¿No tienes cuenta?</p>
+        <a href="#" onclick="credenciales()">Consulta credenciales aquí</a>
+
+	</div>
+
+	<script>
+		function login() {
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+
+			if (username === "RonaldZc" && password === "rickgrimes") {
+				window.location.href = "./html/FitSubs.html";
+			} else {
+				alert("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
+			}
+		}
+
+        function passforgot(){
+            alert("Que lástima :[")
+            
+        }
+
+        function credenciales(){
+            alert("JAAKASJH creyó que había algo aquí 🤡🤳")
+        }
+
+	</script>
+</body>
+</html>
