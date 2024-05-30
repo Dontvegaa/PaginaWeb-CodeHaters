@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/icons/fit.png" type="image/x-icon">
+    <title>Comunicaciones y notificaciones</title>
+    <link rel= "stylesheet" href="css/fitstyle.css">
+    <style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			font-family: Arial, sans-serif;
+		}
+
+		th, td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #645468;
+		}
+
+		tr:hover {
+			background-color: #f5f5f5;
+            color: black;
+		}
+	</style>
+</head>
+
+<body>
+
+    <div class="header">
+        <a class="bottonmain" href="./FitSubs.html"><img class="logofit" src="img/icons/fit.png" alt="logofit"></a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#" class="nav-link">Configuración</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Ayuda</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+            <li class="nav-item"><a href="../login.html" class="nav-link">Cerrar sesión</a></li>
+        </ul>
+        <img class="logouser" src="img/icons/user.png" alt="logo"> 
+        <h1>Comunicaciones y notificaciones</h1>
+    </div>
+
+    <table>
+		<tr>
+			<th>ID Miembro</th>
+			<th>Nombre</th>
+			<th>Tipo de Notificación</th>
+			<th>Último Envío</th>
+			<th>Próximo Envío</th>
+			<th>Acción</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Juan Pérez</td>
+			<td>Recordatorio de Vencimiento</td>
+			<td>-</td>
+			<td>20/04/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(1, 'Recordatorio de Vencimiento')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>María García</td>
+			<td>Promoción</td>
+			<td>15/03/2023</td>
+			<td>15/06/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(2, 'Promoción')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Carlos Rodríguez</td>
+			<td>Recordatorio de Pago</td>
+			<td>01/05/2023</td>
+			<td>01/06/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(3, 'Recordatorio de Pago')">Enviar Notificación</button>
+			</td>
+		</tr>
+
+		<tr>
+			<td>4</td>
+			<td>Laura Sánchez</td>
+			<td>Promoción</td>
+			<td>10/01/2023</td>
+			<td>10/04/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(4, 'Promoción')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Pedro Ramírez</td>
+			<td>Recordatorio de Vencimiento</td>
+			<td>-</td>
+			<td>09/01/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(5, 'Recordatorio de Vencimiento')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>Ana Martínez</td>
+			<td>Recordatorio de Pago</td>
+			<td>01/02/2023</td>
+			<td>01/03/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(6, 'Recordatorio de Pago')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>David Fernández</td>
+			<td>Promoción</td>
+			<td>20/03/2023</td>
+			<td>20/06/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(7, 'Promoción')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Jorge López</td>
+			<td>Recordatorio de Vencimiento</td>
+			<td>-</td>
+			<td>04/05/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(8, 'Recordatorio de Vencimiento')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>Lucía Díaz</td>
+			<td>Recordatorio de Pago</td>
+			<td>12/06/2023</td>
+			<td>12/07/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(9, 'Recordatorio de Pago')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>Roberto Gómez</td>
+			<td>Promoción</td>
+			<td>01/03/2023</td>
+			<td>01/06/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(10, 'Promoción')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td>Carla Torres</td>
+			<td>Recordatorio de Vencimiento</td>
+			<td>-</td>
+			<td>15/07/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(11, 'Recordatorio de Vencimiento')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>12</td>
+			<td>Andrés Jiménez</td>
+			<td>Recordatorio de Pago</td>
+			<td>07/04/2023</td>
+			<td>07/05/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(12, 'Recordatorio de Pago')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>13</td>
+			<td>Elena Moreno</td>
+			<td>Promoción</td>
+			<td>25/12/2022</td>
+			<td>25/03/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(13, 'Promoción')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>14</td>
+			<td>Isabel Rivas</td>
+			<td>Recordatorio de Vencimiento</td>
+			<td>-</td>
+			<td>14/01/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(14, 'Recordatorio de Vencimiento')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>Fernando Castillo</td>
+			<td>Recordatorio de Pago</td>
+			<td>10/05/2023</td>
+			<td>10/06/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(15, 'Recordatorio de Pago')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>16</td>
+			<td>Patricia Reyes</td>
+			<td>Promoción</td>
+			<td>01/08/2023</td>
+			<td>01/11/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(16, 'Promoción')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>José Herrera</td>
+			<td>Recordatorio de Vencimiento</td>
+			<td>-</td>
+			<td>31/07/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(17, 'Recordatorio de Vencimiento')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>18</td>
+			<td>Daniela Mendoza</td>
+			<td>Recordatorio de Pago</td>
+			<td>05/06/2023</td>
+			<td>05/07/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(18, 'Recordatorio de Pago')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>19</td>
+			<td>Ricardo Vargas</td>
+			<td>Promoción</td>
+			<td>12/09/2023</td>
+			<td>12/12/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(19, 'Promoción')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>20</td>
+			<td>Gabriela Flores</td>
+			<td>Recordatorio de Vencimiento</td>
+			<td>-</td>
+			<td>19/05/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(20, 'Recordatorio de Vencimiento')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>21</td>
+			<td>Sergio Silva</td>
+			<td>Recordatorio de Pago</td>
+			<td>01/11/2023</td>
+			<td>01/12/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(21, 'Recordatorio de Pago')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>22</td>
+			<td>Manuela Blanco</td>
+			<td>Promoción</td>
+			<td>01/10/2023</td>
+			<td>01/01/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(22, 'Promoción')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>23</td>
+			<td>Hugo Navarro</td>
+			<td>Recordatorio de Vencimiento</td>
+			<td>-</td>
+			<td>14/04/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(23, 'Recordatorio de Vencimiento')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>24</td>
+			<td>Alberto Ruiz</td>
+			<td>Recordatorio de Pago</td>
+			<td>15/01/2023</td>
+			<td>15/02/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(24, 'Recordatorio de Pago')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>25</td>
+			<td>Sandra Ortiz</td>
+			<td>Promoción</td>
+			<td>10/11/2023</td>
+			<td>10/02/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(25, 'Promoción')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>26</td>
+			<td>Francisco Ramos</td>
+			<td>Recordatorio de Vencimiento</td>
+			<td>-</td>
+			<td>25/05/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(26, 'Recordatorio de Vencimiento')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>27</td>
+			<td>Adriana Medina</td>
+			<td>Recordatorio de Pago</td>
+			<td>07/03/2023</td>
+			<td>07/04/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(27, 'Recordatorio de Pago')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>28</td>
+			<td>Rafael Aguilar</td>
+			<td>Promoción</td>
+			<td>01/04/2023</td>
+			<td>01/07/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(28, 'Promoción')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>29</td>
+			<td>Sofía Castro</td>
+			<td>Recordatorio de Vencimiento</td>
+			<td>-</td>
+			<td>19/07/2024</td>
+			<td>
+				<button onclick="enviarNotificacion(29, 'Recordatorio de Vencimiento')">Enviar Notificación</button>
+			</td>
+		</tr>
+		<tr>
+			<td>30</td>
+			<td>Raúl Guzmán</td>
+			<td>Recordatorio de Pago</td>
+			<td>15/05/2023</td>
+			<td>15/06/2023</td>
+			<td>
+				<button onclick="enviarNotificacion(30, 'Recordatorio de Pago')">Enviar Notificación</button>
+			</td>
+		</tr>
+		
+
+	</table>
+
+	<script>
+		function enviarNotificacion(idMiembro, tipoNotificacion) {
+			alert("Enviando " + tipoNotificacion + " al miembro " + idMiembro);
+		}
+	</script>
+	<script src="js/fitscript.js"></script>
+</body>
+</html>
