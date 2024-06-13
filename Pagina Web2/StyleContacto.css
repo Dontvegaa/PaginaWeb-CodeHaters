@@ -1,59 +1,116 @@
   /* Estilos para Contacto */
-
-  .contact-content table{
-    padding: 2%;
-    width: 94%;
-  
+  body {
+    background-color: rgb(36, 67, 91);
+    color: #fff;
+    font-family: Arial, sans-serif;
   }
   
-  .contact-content table a{
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 180%;
-    background-color: #96d37d;
-    padding: 12px;
-    border-radius: 5%;
+  .container-contact {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px;
   }
   
-  .contact-content table a.a{
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 180%;
-    background-color: #96d37d;
-    padding: 12px;
-    border-radius: 5%;
+  .info-section {
+    flex: 1;
+    margin-right: 40px;
   }
   
-  .contact-content .cont p{
-    font-size: 22px;
-    text-align: justify;
-    width: 94%;
-    margin-left: 3%;
-    margin-top: 3%;
+  .info-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
   }
-  
-  .contact-content table {
-    width: 90%;
-  }
-  
-  .contact-content .bottom-form{
-    border-radius: 2%;
-    background-color: #293a68; 
-    color: white;
-    font-weight: 300;
-    border: 0;
-    height: 70px; 
-    width: 98%;
-    margin-left: 2%;
-    font-size: 18px;
+  .card-direc {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 40px);
+}
+  .contact-form {
+    flex: 1;
+    max-width: 600px;
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  .contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
   }
   
-  .contact-content{
-    padding: 2%;
+  .form-group {
+    margin-bottom: 20px;
   }
   
-  ::placeholder{
-    color: rgb(255, 255, 255);
+  .form-row {
+    display: flex;
+    justify-content: space-between;
   }
   
+  .form-col {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .form-col:last-child {
+    margin-right: 0;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  @media (max-width: 768px) {
+    .container-contact {
+      flex-direction: column;
+    }
+  
+    .info-section {
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+  
+    .form-row {
+      flex-direction: column;
+    }
+  
+    .form-col {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
