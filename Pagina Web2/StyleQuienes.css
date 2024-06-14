@@ -1,66 +1,96 @@
           /* Estilos adicionales para Quiénes Somos */
-        .quienes-somos {
-            padding: 50px 0;
-            text-align: center;
+        .parte1{
+            background-image: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-position: center center;
+            background-repeat:no-repeat;
         }
+          .quienes-somos {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 90px;
+          }
+          .somos-titu{
+            flex: 1;
+            margin-right: 30px;
+          }
+          .somos-conte{
+            flex: 1;
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.451);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          }
         
         .quienes-somos h2 {
-            color: #001e2b;
-            font-size: 2rem;
+            color: white;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 67px;
             font-weight: 700;
             margin-bottom: 20px;
             text-align: center;
         }
         
         .quienes-somos p{
-            color: #333;
+            color: #ffffff;
             font-size: 1.1rem;
             margin-bottom: 10px;
             text-align: center;
         }
         
         .como-surgio {
-            padding: 50px 0;
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 40px;
+
+          }
+      
+        .como-surgio  h2, .como-surgio  h3, .como-surgio  h4 {
+            color: #090909;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          }
+      
+        .como-surgio  h2 {
+            font-size: 28px;
             text-align: center;
-        }
-        
-        .como-surgio h2 {
-            color: #001e2b;
-            font-size: 2rem;
-            font-weight: 700;
             margin-bottom: 20px;
-        }
+          }
+      
+        .como-surgio  p {
+            line-height: 1.5;
+            margin-bottom: 15px;
+          }
         
-        .como-surgio p {
-            color: #333;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-        .conte {
-            padding: 30px;
-            display: inline-block;
-            text-align: center;
-        }
+        .contee {
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 40px;
 
-        .conte.left {
-            float: left;
-            margin: 0;
-            width: 30%;
-        }
-
-        .conte.middle{
-            width: 40%;
-        }
-        .conte.rigth {
-            float: right;
-            margin: 0;
-            width: 30%;
-        }
-        .mision-vision-valores h2{
-            color: #001e2b;
-            font-size: 2rem;
+          }
+      
+        .contee  h2, .contee  h3, .contee  h4 {
+            color: #090909;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          }
+          .contee img{
+            display:flex;
+            width: 70px;
+            align-items: center;
+            margin: auto;
+          }
+      
+        .contee  h2 {
+            font-size: 28px;
             text-align: center;
-        }
+            margin-bottom: 20px;
+          }
+      
+        .contee  p {
+            line-height: 1.5;
+            margin-bottom: 15px;
+          }
 
         .mision-vision-valores:after {
             content: "";
@@ -68,44 +98,55 @@
             clear: both;
         }     
         
-        /* Estilos para Misión, Visión y Valores */
         .mission-vision-values {
             background-color: #f7f7f7;
             padding: 40px;
+            
         }
         
         .container-mvv {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px;
         }
         
-        .card {
+        .card1,.card2,.card3 {
             background-color: #fff;
             padding: 20px;
             margin: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: calc(33.33% - 40px);
+            border-radius: 7%;
         }
-        
-        .card h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .card p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        
-        .derechos {
-          display: inline-block;
-        }
+        .card1,.card2,.card3 {
+            flex: 1;
+            margin-right: 40px;
+          }
 
-        @media screen and (max-width:600px) {
-        .column {
-            width: 100%;
+          @media (max-width: 1080px) {
+            .container-mvv {
+              flex-direction: column;
+              align-items: center;
+            }
+            .card1,.card2,.card3 {
+                width: 600px;
+            }
         }
-    }
+        @media (max-width: 780px) {
+
+            .quienes-somos {
+                flex-direction: column;
+              }
+            .card1,.card2,.card3 {
+                width: auto;
+            }
+        }
+        @media (max-width: 780px) {
+
+            .quienes-somos h2 {
+                font-size: 45px;
+              }
+
+        }
