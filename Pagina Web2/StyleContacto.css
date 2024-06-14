@@ -60,6 +60,10 @@
     margin-right: 0;
   }
   
+  .asuntobloque{
+    background-color: #5c7b94;
+  }
+
   label {
     display: block;
     font-weight: bold;
