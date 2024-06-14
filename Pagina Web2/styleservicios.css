@@ -1,0 +1,22 @@
+
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.submain{
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
+
+.card{
+    width: 22rem;
+}
+
+.card{
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
